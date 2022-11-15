@@ -1,3 +1,3 @@
-<div class="image-area" style="text-align: center; padding: 50px; width: 100%;">
-    <img class="" src="git-result-tab-navigation.gif" alt="navegação por tab" width="300px" style="margin: 0 auto;">
-</div>
+<p align="center" width="100%">
+    <img class="" src="git-result-tab-navigation.gif" alt="navegação por tab" width="500px" style="margin: 0 auto;">
+</p>
