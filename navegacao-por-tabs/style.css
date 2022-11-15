@@ -1,15 +1,6 @@
 body {
-    font-family: sans-serif;
     display: grid;
     place-items: center;
-    height: 100vh;
-}
-
-ul, li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    box-sizing: border-box;
 }
 
 .tab-container {
@@ -29,23 +20,23 @@ ul, li {
 }
 
 .js-tab-menu li {
-    background-color:lightgray;
-    border: 1px solid #fff;
+    border: 1px solid var(--primary-green);
     padding: 10px 20px;
     transition: 300ms ease;
+    color: var(--primary-green)
 }
 
 .js-tab-menu li:hover {
-    background-color:#bfbfbf;
+    background-color: var(--dark-purple);
 }
 
 .js-tab-menu .active {
-    background-color: #70b966;
+    background-color: var(--primary-green);
     color: #fff;
 }
 
 .js-tab-menu .active:hover {
-    background-color: #70b966;
+    background-color: var(--primary-green);
 }
 
 .js-tab-content {
@@ -54,7 +45,9 @@ ul, li {
     height: 100%;
     display: grid;
     place-items: center;
-    box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px rgb(40, 40, 40);
+    background-color: var(--dark-purple);
+    transition: 300ms;
 }
 
 .js-tab-content li {
