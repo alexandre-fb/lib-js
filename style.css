@@ -27,6 +27,7 @@ time, mark, audio, video {
     text-decoration: none;
     box-sizing: border-box;
     color: #fff;
+    line-height: 1.5;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
