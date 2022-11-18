@@ -20,10 +20,10 @@ body {
 }
 
 .js-tab-menu li {
-    border: 1px solid var(--primary-green);
+    border: 1px solid var(--green);
     padding: 10px 20px;
     transition: 300ms ease;
-    color: var(--primary-green)
+    color: var(--green)
 }
 
 .js-tab-menu li:hover {
@@ -31,12 +31,12 @@ body {
 }
 
 .js-tab-menu .active {
-    background-color: var(--primary-green);
+    background-color: var(--green);
     color: #fff;
 }
 
 .js-tab-menu .active:hover {
-    background-color: var(--primary-green);
+    background-color: var(--green);
 }
 
 .js-tab-content {
