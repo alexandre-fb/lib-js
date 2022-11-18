@@ -55,8 +55,9 @@ table {
 
 /* Variables */
 :root {
-    --primary-green: #70b966;
-    --secondary-green: #56904f;
+    --green: #70b966;
+    --light-green: #b9e6b3;
+    --dark-green: #56904f;
     --very-dark-purple: #191522;
     --dark-purple: #241f30;
 }
