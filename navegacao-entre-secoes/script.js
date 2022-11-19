@@ -1,8 +1,8 @@
 //Pega os ementos que serão animados
 const elementsToAnimate = document.querySelectorAll('.scroll-animation') 
 
-//Pega 60% da altura
-const sixtyPercentScreen = innerHeight * 0.9
+//Pega % da altura da tela
+const screenHeightPercentage = innerHeight * 0.7
 
 //Função de animação
 function animateToScroll () {
@@ -13,8 +13,8 @@ function animateToScroll () {
         //Pega o valor do top do elemento
         const sectionTop = element.getBoundingClientRect().top
 
-        //Diminui 60% da altura da tela do valor do top
-        const positionToAnimate = sectionTop - sixtyPercentScreen
+        //Diminui % da altura da tela do valor do top, pra nao aparecer só quando o elemento passar do topo da página
+        const positionToAnimate = sectionTop - screenHeightPercentage
 
         console.log('sectionTop', sectionTop)
         console.log('heightToAnimate', positionToAnimate)

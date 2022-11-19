@@ -57,8 +57,8 @@ section:nth-child(even) {
 
 section div {
     opacity: 0;
-    transform: translateY(100px);
-    transition: 300ms;
+    transform: translate3D(-100px, 80px, 0);
+    transition: 400ms;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -66,7 +66,7 @@ section div {
 
 section > .active {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translate3D(0, 0, 0);
 }
 
 section div h2 {
