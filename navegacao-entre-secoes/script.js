@@ -16,9 +16,6 @@ function animateToScroll () {
         //Diminui % da altura da tela do valor do top, pra nao aparecer só quando o elemento passar do topo da página
         const positionToAnimate = sectionTop - screenHeightPercentage
 
-        console.log('sectionTop', sectionTop)
-        console.log('heightToAnimate', positionToAnimate)
-
         //Adiciona ou remove a classe
         if(positionToAnimate < 0) {
             element.classList.add('active')
@@ -29,7 +26,7 @@ function animateToScroll () {
 }
 
 window.addEventListener('scroll', () => {
-    animateToScroll ()
+    animateToScroll()
 })
 
-animateToScroll ()
+animateToScroll()
