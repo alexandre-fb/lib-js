@@ -43,6 +43,10 @@ nav .links .link a {
     place-items: center;
 }
 
+nav .links .link .active {
+    color: var(--green);
+}
+
 section {
     width: 100%;
     height: 100vh;
