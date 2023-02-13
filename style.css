@@ -1,3 +1,13 @@
+/* Variables */
+:root {
+    --green: #70b966;
+    --light-green: #b9e6b3;
+    --dark-green: #56904f;
+    --very-dark-purple: #191522;
+    --dark-purple: #241f30;
+    --white: #fff;
+    --transition: 200ms ease-in-out;
+}
 /* Reset */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -56,12 +66,18 @@ table {
 	border-spacing: 0;
 }
 
-/* Variables */
-:root {
-    --green: #70b966;
-    --light-green: #b9e6b3;
-    --dark-green: #56904f;
-    --very-dark-purple: #191522;
-    --dark-purple: #241f30;
+.primary-button {
+    background: none;
+    padding: 10px 20px;
+    border: 1px solid var(--green);
+    border-radius: 40px;
+    color: var(--green);
+    cursor: pointer;
+    transition: var(--transition);
 }
 
+.primary-button:hover {
+    background: var(--green);
+    border: 1px solid var(--green);
+    color: var(--white);
+}
