@@ -1,0 +1,90 @@
+@keyframes showDown {
+    from {
+        opacity: 0;
+        transform: scale3d(1, 0, 1);
+        transform-origin: 0 0;
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+        transform-origin: 0 0;
+    }
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select {
+    padding: 0 20px;
+    height: 50px;
+    border: 1px solid var(--green);
+    width: 200px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.select-wrapper.active .select::after {
+    transform: rotate(180deg);
+}
+
+.select::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid var(--green);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    transform: rotate(0);
+    transition: var(--transition);
+}
+
+.select-wrapper.active .options {
+    display: block;
+}
+
+.options {
+    position: absolute;
+    top: 50px;
+    z-index: 200;
+    width: 200px;
+    animation: showDown .2s forwards;
+    display: none;
+
+}
+
+.options .option {
+    padding: 0 20px;
+    border: 1px solid var(--green);
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.options li:hover {
+    background-color: var(--green);
+}
+
+
