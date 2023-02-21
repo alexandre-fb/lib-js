@@ -1,0 +1,68 @@
+.radio-area {
+  text-align: center;
+  padding: 30px;
+}
+
+.radio-area h2 {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.inputs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estiliza o label do input para criar uma aparência personalizada */
+.radio-label {
+    position: relative;
+    padding-left: 25px;
+    margin: 0 15px;
+    cursor: pointer;
+    font-size: 1em;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    color: var(--green)
+  }
+
+  /* Estiliza o próprio input, ocultando-o e adicionando um ícone personalizado */
+  .radio-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Estiliza o ícone personalizado que aparece ao lado do input selecionado */
+  .radio-checkmark {
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 10%;
+    border: 1px solid var(--green);
+    display: grid;
+    place-items: center;
+  }
+
+  /* Estiliza o ícone personalizado que aparece ao lado do input selecionado. O ~ seleciona o elemento irmão junto */
+  .radio-label input:checked ~ .radio-checkmark {
+    background-color: var(--green);
+  }
+
+  /* Estiliza o ícone personalizado que aparece ao lado do input selecionado */
+  .radio-checkmark:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--dark-purple);
+    display: none;
+  }
+
+  /* Estiliza o ícone personalizado que aparece ao lado do input selecionado */
+  .radio-label input:checked ~ .radio-checkmark:after {
+    display: block;
+  }

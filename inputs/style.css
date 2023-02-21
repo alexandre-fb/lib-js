@@ -1,0 +1,13 @@
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  width: 500px;
+  border: 1px solid var(--green);
+  box-shadow: 0 0 7px var(--green);
+  padding: 50px;
+}
