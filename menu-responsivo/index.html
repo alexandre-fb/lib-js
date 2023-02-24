@@ -18,14 +18,17 @@
                     <div class="logo">Logo</div>
                 </a>
                 
-                <nav class="active"  id="nav-header">
-                    <button class="hamburger" id="menu-hamburger" aria-expanded="false">
+                <nav class="active" data-menu="nav">
+                    <!-- O aria-expanded mostra pro leitor de tela que o menu não tá expandido (acessibilidade) -->
+                    <!-- O aria-controls mostra pro leitor de tela o que esse botão tá controlando -->
+                    <button class="hamburger" data-menu="hamburger" aria-expanded="false" aria-controls="menu">
                         <span class="hamburger__line"></span>
                         <span class="hamburger__line"></span>
                         <span class="hamburger__line"></span>
                     </button>
         
-                    <ul class="nav__list">
+                    <!-- O id no ul é para fazer referência ao aria-controls do button -->
+                    <ul class="nav__list" data-menu="menu" >
                         <li class="nav__item active"><a href="#">Link 1</a></li>
                         <li class="nav__item"><a href="#">Link 2</a></li>
                         <li class="nav__item"><a href="#">Link 3</a></li>

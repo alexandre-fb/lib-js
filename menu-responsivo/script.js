@@ -1,67 +1,92 @@
-const navHeader = document.querySelector('#nav-header')
-const menuHamburger = document.querySelector('#menu-hamburger')
+const navHeader = document.querySelector('[data-menu="nav"')
+const btnHamburger = document.querySelector('[data-menu="hamburger"]')
 
-//abrir e frachar o menu clicando no hamburguer
-menuHamburger.addEventListener('click', (event) => {
-    event.stopPropagation();
+const html = document.querySelector('html')
+
+if(navHeader && btnHamburger) {
+    //Validação para não travar o js todo caso não encontre os elementos.
     
-    navHeader.classList.toggle('active')
+    btnHamburger.addEventListener('click', handleClick)
 
-    const navHeaderHasActiveClass = navHeader.classList.contains('active')
+    function handleClick(event) {
+        if(!navHeader.classList.contains('active')) {
+            event.stopPropagation();
+            showMenu()
+        }
 
-    if (navHeaderHasActiveClass) {
-        navHeader.setAttribute("aria-expanded", true)
-    } else {
-        navHeader.setAttribute("aria-expanded", false)
+        clickOutside()
+
+        function clickOutside() {
+            html.addEventListener('click', clickOutside)
+
+            function clickOutside(event) {
+                const menuBackground = document.querySelector('[data-menu="menu"]')
+                
+                //Condicional para não fechar o menu caso clique em alguma parte do menu que não seja o link.
+                if(event.target === menuBackground) {
+                    event.stopPropagation()
+                    return
+                }
+
+                closeMenu()
+                html.removeEventListener('click', clickOutside)
+            }
+        }
     }
-})
 
-//fechar ao clicar fora do menu
-document.addEventListener('click', (event) => {
-    if (event.target.id !== 'nav-header' && event.target.id !== 'menu-hamburger') {
+    function showMenu() {
+        navHeader.classList.add('active')
+        btnHamburger.setAttribute("aria-expanded", true)
+    }
+
+    function closeMenu() {
         navHeader.classList.remove('active')
+        btnHamburger.setAttribute("aria-expanded", false)
     }
-})
 
-//Aplicar classe active link atual
-function activeLink() {
+    //Aplicar classe active no link clicado
+    activeClickedLink()
 
-    const menuItems = document.querySelectorAll('.nav__item a')
+    function activeClickedLink() {
 
-    menuItems.forEach(item => {
-        item.addEventListener('click', (event) => {
-            menuItems.forEach(element => {
-                element.parentElement.classList.remove('active')
+        const menuItems = document.querySelectorAll('.nav__item a')
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+                menuItems.forEach(element => {
+                    element.parentElement.classList.remove('active')
+                })
+                
+                if(event.target === item) {
+                    item.parentElement.classList.add('active')
+                } 
             })
-            
-            if(event.target === item) {
-                item.parentElement.classList.add('active')
-            } 
         })
-    })
 
-    // start se tiver navegação entre seções na mesma página
+        // Adicionar active na seção atual, se tiver navegação entre seções na mesma página
 
-    // const sections = document.querySelectorAll('section[id]')
-    // const screenHeightPercentage = innerHeight * 0.6
+        // const sections = document.querySelectorAll('section[id]')
+        // const screenHeightPercentage = innerHeight * 0.6
 
-    // sections.forEach((section) => {
-    //     const sectionTop = section.getBoundingClientRect().top
-    //     const sectionBottom = section.getBoundingClientRect().bottom
-    //     const positionToActive = sectionTop - screenHeightPercentage
-    //     const positionToInactive = sectionBottom - screenHeightPercentage
-    //     const sectionId = section.getAttribute('id')
+        // sections.forEach((section) => {
+        //     const sectionTop = section.getBoundingClientRect().top
+        //     const sectionBottom = section.getBoundingClientRect().bottom
+        //     const positionToActive = sectionTop - screenHeightPercentage
+        //     const positionToInactive = sectionBottom - screenHeightPercentage
+        //     const sectionId = section.getAttribute('id')
 
-    //     if(positionToActive < 0 && positionToInactive > 0) {
-    //         const currentSection = document.querySelector('li a[href*=' + sectionId + ']')
-    //         currentSection.classList.add('active')
-    //     } else {
-    //         const currentSection = document.querySelector('li a[href*=' + sectionId + ']')
-    //         currentSection.classList.remove('active')
-    //     }
-    // })
+        //     if(positionToActive < 0 && positionToInactive > 0) {
+        //         const currentSection = document.querySelector('li a[href*=' + sectionId + ']')
+        //         currentSection.classList.add('active')
+        //     } else {
+        //         const currentSection = document.querySelector('li a[href*=' + sectionId + ']')
+        //         currentSection.classList.remove('active')
+        //     }
+        // })
 
-    // end se tiver navegação entre seções na mesma página
+        // end se tiver navegação entre seções na mesma página
+    }
 }
 
-activeLink()
+
+
